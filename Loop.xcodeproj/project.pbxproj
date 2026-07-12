@@ -42,6 +42,10 @@
 		14B1738028AEDC6C006CCD7C /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892A5D58222F0A27008961AB /* Debug.swift */; };
 		14B1738128AEDC70006CCD7C /* StatusExtensionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F70C2111DE900EA006380B7 /* StatusExtensionContext.swift */; };
 		14D906F42A846510006EB79A /* FavoriteFoodsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D906F32A846510006EB79A /* FavoriteFoodsViewModel.swift */; };
+		FD1000010000000000000001 /* TodayRecap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1000110000000000000001 /* TodayRecap.swift */; };
+		FD1000020000000000000001 /* TodayRecapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1000120000000000000001 /* TodayRecapViewModel.swift */; };
+		FD1000030000000000000001 /* TodayRecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1000130000000000000001 /* TodayRecapView.swift */; };
+		FD1000040000000000000001 /* TodayRecapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1000140000000000000001 /* TodayRecapTests.swift */; };
 		1D05219B2469E9DF000EBBDE /* StoredAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05219A2469E9DF000EBBDE /* StoredAlert.swift */; };
 		1D05219D2469F1F5000EBBDE /* AlertStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05219C2469F1F5000EBBDE /* AlertStore.swift */; };
 		1D080CBD2473214A00356610 /* AlertStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D080CBB2473214A00356610 /* AlertStore.xcdatamodeld */; };
@@ -780,6 +784,10 @@
 		14B1737028AEDBF6006CCD7C /* GlucoseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseView.swift; sourceTree = "<group>"; };
 		14B1737128AEDBF6006CCD7C /* LoopCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopCircleView.swift; sourceTree = "<group>"; };
 		14D906F32A846510006EB79A /* FavoriteFoodsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFoodsViewModel.swift; sourceTree = "<group>"; };
+		FD1000110000000000000001 /* TodayRecap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecap.swift; sourceTree = "<group>"; };
+		FD1000120000000000000001 /* TodayRecapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecapViewModel.swift; sourceTree = "<group>"; };
+		FD1000130000000000000001 /* TodayRecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecapView.swift; sourceTree = "<group>"; };
+		FD1000140000000000000001 /* TodayRecapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecapTests.swift; sourceTree = "<group>"; };
 		1D05219A2469E9DF000EBBDE /* StoredAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredAlert.swift; sourceTree = "<group>"; };
 		1D05219C2469F1F5000EBBDE /* AlertStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStore.swift; sourceTree = "<group>"; };
 		1D080CBC2473214A00356610 /* AlertStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlertStore.xcdatamodel; sourceTree = "<group>"; };
@@ -1660,6 +1668,7 @@
 		43757D131C06F26C00910CB9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD1000110000000000000001 /* TodayRecap.swift */,
 				DDC389F52A2B61750066E2E8 /* ApplicationFactorStrategy.swift */,
 				B4E2022F2661063E009421B5 /* AutomaticDosingStatus.swift */,
 				A9FB75F0252BE320004C7D3F /* BolusDosingDecision.swift */,
@@ -1964,6 +1973,7 @@
 		43F5C2CF1B92A2ED003EB13D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FD1000130000000000000001 /* TodayRecapView.swift */,
 				1452F4AA2A851EDF00F8B9E4 /* AddEditFavoriteFoodView.swift */,
 				B4001CED28CBBC82002FB414 /* AlertManagementView.swift */,
 				897A5A9524C2175B00C4E71D /* BolusEntryView.swift */,
@@ -2344,6 +2354,7 @@
 		897A5A9724C22DCE00C4E71D /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD1000120000000000000001 /* TodayRecapViewModel.swift */,
 				1452F4A82A851C9400F8B9E4 /* AddEditFavoriteFoodViewModel.swift */,
 				897A5A9824C22DE800C4E71D /* BolusEntryViewModel.swift */,
 				149A28BA2A853E5100052EDF /* CarbEntryViewModel.swift */,
@@ -2464,6 +2475,7 @@
 		B4BC56362518DE8800373647 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FD1000140000000000000001 /* TodayRecapTests.swift */,
 				1D8D55BB252274650044DBB6 /* BolusEntryViewModelTests.swift */,
 				B4BC56372518DEA900373647 /* CGMStatusHUDViewModelTests.swift */,
 				C165756E2534C468004AE16E /* SimpleBolusViewModelTests.swift */,
@@ -3382,6 +3394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD1000010000000000000001 /* TodayRecap.swift in Sources */,
+				FD1000020000000000000001 /* TodayRecapViewModel.swift in Sources */,
+				FD1000030000000000000001 /* TodayRecapView.swift in Sources */,
 				C17824A51E1AD4D100D9D25C /* ManualBolusRecommendation.swift in Sources */,
 				897A5A9624C2175B00C4E71D /* BolusEntryView.swift in Sources */,
 				4F70C2131DE90339006380B7 /* StatusExtensionContext.swift in Sources */,
@@ -3726,6 +3741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD1000040000000000000001 /* TodayRecapTests.swift in Sources */,
 				A9DF02CB24F72B9E00B7C988 /* CriticalEventLogTests.swift in Sources */,
 				1D80313D24746274002810DF /* AlertStoreTests.swift in Sources */,
 				C1777A6625A125F100595963 /* ManualEntryDoseViewModelTests.swift in Sources */,

@@ -68,6 +68,10 @@ RemoteSettings.plist
 # OS
 .DS_Store
 
+# Local AI tooling
+.omo/
+.opencode/
+
 # Framework development
 Loop.xcworkspace
 

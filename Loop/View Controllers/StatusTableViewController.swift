@@ -661,6 +661,7 @@ final class StatusTableViewController: LoopChartsTableViewController {
         case alertWarning
         case hud
         case status
+        case todayRecap
         case charts
     }
 
@@ -887,6 +888,8 @@ final class StatusTableViewController: LoopChartsTableViewController {
             return shouldShowHUD ? 1 : 0
         case .charts:
             return ChartRow.allCases.count
+        case .todayRecap:
+            return 1
         case .status:
             return shouldShowStatus ? StatusRow.allCases.count : 0
         }
@@ -1024,6 +1027,19 @@ final class StatusTableViewController: LoopChartsTableViewController {
 
             cell.setSubtitleTextColor(color: UIColor.secondaryLabel)
 
+            return cell
+        case .todayRecap:
+            let reuseIdentifier = "TodayRecapCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) ?? UITableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifier)
+            var content = cell.defaultContentConfiguration()
+            content.text = NSLocalizedString("Today Recap", comment: "Title of the daily recap row on the status screen")
+            content.secondaryText = NSLocalizedString("Recorded glucose, carbohydrates, and reported insulin", comment: "Subtitle of the daily recap row on the status screen")
+            content.image = UIImage(systemName: "chart.bar.xaxis")
+            content.imageProperties.tintColor = .glucoseTintColor
+            cell.contentConfiguration = content
+            cell.accessoryType = .disclosureIndicator
+            cell.backgroundColor = .secondarySystemBackground
+            cell.accessibilityHint = NSLocalizedString("Opens a read-only summary of today's recorded data", comment: "Accessibility hint for the daily recap row")
             return cell
         case .status:
 
@@ -1177,7 +1193,7 @@ final class StatusTableViewController: LoopChartsTableViewController {
                     cell.setSubtitleLabel(label: nil)
                 }
             }
-        case .hud, .status, .alertWarning:
+        case .hud, .status, .todayRecap, .alertWarning:
             break
         }
     }
@@ -1198,7 +1214,7 @@ final class StatusTableViewController: LoopChartsTableViewController {
             case .iob, .dose, .cob:
                 return max(106, 0.21 * availableSize)
             }
-        case .hud, .status, .alertWarning:
+        case .hud, .status, .todayRecap, .alertWarning:
             return UITableView.automaticDimension
         }
     }
@@ -1215,6 +1231,9 @@ final class StatusTableViewController: LoopChartsTableViewController {
             }
         case .hud:
             break
+        case .todayRecap:
+            tableView.deselectRow(at: indexPath, animated: true)
+            presentTodayRecap()
         case .status:
             switch StatusRow(rawValue: indexPath.row)! {
             case .status:
@@ -1582,6 +1601,14 @@ final class StatusTableViewController: LoopChartsTableViewController {
     
     @IBAction func onSettingsTapped(_ sender: UIBarButtonItem) {
         presentSettings()
+    }
+
+    private func presentTodayRecap() {
+        let viewModel = TodayRecapViewModel(dataSource: deviceManager)
+        let view = TodayRecapView(viewModel: viewModel)
+            .environmentObject(deviceManager.displayGlucosePreference)
+        let hostingController = DismissibleHostingController(rootView: view, isModalInPresentation: false)
+        present(hostingController, animated: true)
     }
 
     private func presentSettings() {
