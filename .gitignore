@@ -67,6 +67,7 @@ RemoteSettings.plist
 
 # OS
 .DS_Store
+.opencode/
 
 # Framework development
 Loop.xcworkspace
